@@ -149,7 +149,7 @@ def main_old(argv):
           raise ValueError('parent_dirpath is empty!')
 
       # pad child_counter with zeros to make sure order is preserved when sorting
-      child_counter_str = str(child_counter).zfill(3) + '_'
+      child_counter_str = str(child_counter).zfill(4) + '_'
 
       # use name attribute as child_dirname otherwise use zero padded tag
       if 'name' in elem.attrib.keys():
