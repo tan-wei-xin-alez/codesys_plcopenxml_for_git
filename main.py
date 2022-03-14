@@ -1,5 +1,6 @@
 import sys
 import logging
+import shutil
 import lxml.etree
 import re
 import os
@@ -135,7 +136,9 @@ def main_old(argv):
   # if args.debug is True:
   logger.setLevel(logging.DEBUG)
 
-  project_tree = lxml.etree.parse('test/example_project.xml')
+  project_dir_path = 'test/example_project.xml'
+  shutil.rmtree(project_dir_path)
+  project_tree = lxml.etree.parse(project_dir_path)
   project_root_elem = project_tree.getroot()
 
   def create_dirs_and_files(elem_list, parent_dirpath=''):
